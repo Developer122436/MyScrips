@@ -1,0 +1,116 @@
+1
+00:00:00,003 --> 00:00:01,009
+- [Instructor] If you've ever found yourself stuck
+
+2
+00:00:01,009 --> 00:00:05,000
+with the boring task of constantly reading over spreadsheets
+
+3
+00:00:05,000 --> 00:00:06,000
+for certain data,
+
+4
+00:00:06,000 --> 00:00:08,004
+copying and pasting to new Excel documents,
+
+5
+00:00:08,004 --> 00:00:10,005
+or just trying to make your data look good,
+
+6
+00:00:10,005 --> 00:00:13,002
+then Openpyxl is the library for you.
+
+7
+00:00:13,002 --> 00:00:15,000
+Openpyxl is a package in Python
+
+8
+00:00:15,000 --> 00:00:16,008
+that allows our code to interact
+
+9
+00:00:16,008 --> 00:00:18,009
+directly with Excel documents.
+
+10
+00:00:18,009 --> 00:00:20,001
+With Openpyxl,
+
+11
+00:00:20,001 --> 00:00:22,000
+we gain the freedom to manipulate
+
+12
+00:00:22,000 --> 00:00:23,009
+not just the data in the spreadsheet,
+
+13
+00:00:23,009 --> 00:00:26,002
+but the properties of the spreadsheet itself.
+
+14
+00:00:26,002 --> 00:00:28,001
+It does this by storing an Excel workbook
+
+15
+00:00:28,001 --> 00:00:29,008
+as well as the worksheets
+
+16
+00:00:29,008 --> 00:00:32,008
+as objects that we can alter with our code.
+
+17
+00:00:32,008 --> 00:00:34,008
+Openpyxl is the most used module
+
+18
+00:00:34,008 --> 00:00:36,008
+for dealing specifically with Excel,
+
+19
+00:00:36,008 --> 00:00:39,001
+as it allows us to do anything from styling sheets
+
+20
+00:00:39,001 --> 00:00:41,009
+to parsing data or creating graphs.
+
+21
+00:00:41,009 --> 00:00:43,002
+Before we get started,
+
+22
+00:00:43,002 --> 00:00:45,000
+we need to make sure that Openpyxl
+
+23
+00:00:45,000 --> 00:00:51,002
+is installed to our command prompt.
+
+24
+00:00:51,002 --> 00:00:52,009
+Running the pip install command,
+
+25
+00:00:52,009 --> 00:00:55,005
+we see that I already have it.
+
+26
+00:00:55,005 --> 00:00:58,004
+Next, let's open up our Python module.
+
+27
+00:00:58,004 --> 00:01:01,000
+When we import Openpyxl and press Enter,
+
+28
+00:01:01,000 --> 00:01:02,003
+if no errors appear,
+
+29
+00:01:02,003 --> 00:01:04,000
+then we've installed successfully.
+

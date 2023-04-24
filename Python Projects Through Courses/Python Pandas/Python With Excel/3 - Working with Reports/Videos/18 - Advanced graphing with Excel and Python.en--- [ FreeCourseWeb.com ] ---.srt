@@ -1,0 +1,464 @@
+1
+00:00:00,005 --> 00:00:01,008
+- [Instructor] When working with reports,
+
+2
+00:00:01,008 --> 00:00:04,005
+a graphical interface is important to keep in mind.
+
+3
+00:00:04,005 --> 00:00:06,003
+Openpyxl does not support features
+
+4
+00:00:06,003 --> 00:00:07,008
+to work with pivot tables
+
+5
+00:00:07,008 --> 00:00:10,000
+but we can format our reports to look nice
+
+6
+00:00:10,000 --> 00:00:12,004
+after we've analyzed the data and pandas.
+
+7
+00:00:12,004 --> 00:00:13,003
+In this video,
+
+8
+00:00:13,003 --> 00:00:16,003
+we'll go over some tricks to work with graphs and layouts.
+
+9
+00:00:16,003 --> 00:00:21,007
+So, let's import what we need to work with.
+
+10
+00:00:21,007 --> 00:00:26,006
+We'll be using a bar chart and a pie chart.
+
+11
+00:00:26,006 --> 00:00:28,005
+Now, we can load our workbook.
+
+12
+00:00:28,005 --> 00:00:34,003
+We'll use the template filled in with our crime csv data.
+
+13
+00:00:34,003 --> 00:00:39,002
+We also need to grab our active worksheet.
+
+14
+00:00:39,002 --> 00:00:45,000
+Now let's head over and look at our current report.
+
+15
+00:00:45,000 --> 00:00:47,007
+There are few things we want to take into consideration.
+
+16
+00:00:47,007 --> 00:00:50,001
+First, we'll notice that there's some thick borders
+
+17
+00:00:50,001 --> 00:00:51,005
+that format this area for us
+
+18
+00:00:51,005 --> 00:00:55,000
+and give us a set template for where our chart should go.
+
+19
+00:00:55,000 --> 00:00:56,001
+We want to create a chart
+
+20
+00:00:56,001 --> 00:00:58,000
+that will help us visualize the crimes
+
+21
+00:00:58,000 --> 00:00:59,007
+in each district by year.
+
+22
+00:00:59,007 --> 00:01:01,008
+For this, we'll use a bar chart.
+
+23
+00:01:01,008 --> 00:01:04,007
+Also note that we want our chart to be in the proper place
+
+24
+00:01:04,007 --> 00:01:07,009
+so we'll add it in the top left corner to cell B14.
+
+25
+00:01:07,009 --> 00:01:09,006
+Remember, that our data is accessed
+
+26
+00:01:09,006 --> 00:01:12,004
+from cell A8 to M13.
+
+27
+00:01:12,004 --> 00:01:16,009
+So let's go ahead and make a chart.
+
+28
+00:01:16,009 --> 00:01:18,009
+We'll create our data variable by referencing
+
+29
+00:01:18,009 --> 00:01:26,008
+cells A8 to M13.
+
+30
+00:01:26,008 --> 00:01:31,007
+Next, we just have to add our data to the chart.
+
+31
+00:01:31,007 --> 00:01:37,007
+Then, we'll add our chart to our worksheet at cell B14.
+
+32
+00:01:37,007 --> 00:01:43,003
+Finally, we'll save this and run our code.
+
+33
+00:01:43,003 --> 00:01:48,004
+So let's go check it out.
+
+34
+00:01:48,004 --> 00:01:49,006
+Now we can see that our graph
+
+35
+00:01:49,006 --> 00:01:51,007
+is not looking exactly how we wanted.
+
+36
+00:01:51,007 --> 00:01:53,007
+First of all, there's no title
+
+37
+00:01:53,007 --> 00:01:56,009
+also the key is by district rather than year
+
+38
+00:01:56,009 --> 00:01:58,009
+which makes way too many bars to look over
+
+39
+00:01:58,009 --> 00:02:01,007
+especially if we wanted to identify a single district.
+
+40
+00:02:01,007 --> 00:02:03,007
+In addition, there's an entire extra
+
+41
+00:02:03,007 --> 00:02:05,005
+and empty section of the chart.
+
+42
+00:02:05,005 --> 00:02:07,005
+We need to fix all these chart formatting problems
+
+43
+00:02:07,005 --> 00:02:09,008
+as well as resize the chart to cover
+
+44
+00:02:09,008 --> 00:02:11,001
+the area we want it to.
+
+45
+00:02:11,001 --> 00:02:13,000
+But first, let's see how Excel
+
+46
+00:02:13,000 --> 00:02:14,005
+would recommend making the chart.
+
+47
+00:02:14,005 --> 00:02:18,009
+So let's delete our current chart,
+
+48
+00:02:18,009 --> 00:02:21,008
+highlight all of our data,
+
+49
+00:02:21,008 --> 00:02:23,006
+head over to insert,
+
+50
+00:02:23,006 --> 00:02:26,007
+recommended charts and open the first one.
+
+51
+00:02:26,007 --> 00:02:28,005
+We can see that this chart is much cleaner
+
+52
+00:02:28,005 --> 00:02:30,003
+and closer to our objective.
+
+53
+00:02:30,003 --> 00:02:32,001
+The districts are laid out cleanly
+
+54
+00:02:32,001 --> 00:02:33,007
+and the years are the bars.
+
+55
+00:02:33,007 --> 00:02:35,007
+However, we do have an extra year value
+
+56
+00:02:35,007 --> 00:02:37,007
+in the key that we'd want to get rid of.
+
+57
+00:02:37,007 --> 00:02:39,005
+So, just for learning sake,
+
+58
+00:02:39,005 --> 00:02:43,000
+let's see how Excel set this up.
+
+59
+00:02:43,000 --> 00:02:46,001
+The data ranges from cell A8 through M13
+
+60
+00:02:46,001 --> 00:02:48,002
+but that's how we had it set up last time.
+
+61
+00:02:48,002 --> 00:02:50,000
+So if we go to edit
+
+62
+00:02:50,000 --> 00:02:52,001
+you'll notice that the series name is year
+
+63
+00:02:52,001 --> 00:02:53,009
+at the year cell A9
+
+64
+00:02:53,009 --> 00:02:58,001
+and the series values are empty from B9 to M9.
+
+65
+00:02:58,001 --> 00:03:02,000
+So we know that this is coming from rows instead of columns.
+
+66
+00:03:02,000 --> 00:03:04,004
+Next, let's edit the districts.
+
+67
+00:03:04,004 --> 00:03:06,008
+We can see that it calls them access labels
+
+68
+00:03:06,008 --> 00:03:09,003
+so we just need to add them as labels.
+
+69
+00:03:09,003 --> 00:03:11,003
+Let's make the edits for our graphs.
+
+70
+00:03:11,003 --> 00:03:14,001
+We'll make the data variable have the minimum row 10
+
+71
+00:03:14,001 --> 00:03:16,002
+so that we exclude just the year
+
+72
+00:03:16,002 --> 00:03:19,003
+and then take in the rest in the values of the districts.
+
+73
+00:03:19,003 --> 00:03:21,009
+Then, we'll make a labels variable.
+
+74
+00:03:21,009 --> 00:03:23,005
+Then, we'll make a labels variable
+
+75
+00:03:23,005 --> 00:03:25,000
+to reference all the districts
+
+76
+00:03:25,000 --> 00:03:32,002
+so they're not in the data set.
+
+77
+00:03:32,002 --> 00:03:34,004
+Now we have to make sure that when we add the data
+
+78
+00:03:34,004 --> 00:03:36,003
+we specify that it's taking from rows
+
+79
+00:03:36,003 --> 00:03:39,009
+just like we saw in the recommended graph.
+
+80
+00:03:39,009 --> 00:03:41,006
+Other than that, we'll add a title
+
+81
+00:03:41,006 --> 00:03:49,002
+and make sure to include the labels.
+
+82
+00:03:49,002 --> 00:03:51,005
+The last part is figuring out the height.
+
+83
+00:03:51,005 --> 00:03:53,003
+We can do some math to figure this out
+
+84
+00:03:53,003 --> 00:03:55,008
+but we don't know the default values of the graph.
+
+85
+00:03:55,008 --> 00:04:01,000
+So let's set them both equal to 10.
+
+86
+00:04:01,000 --> 00:04:08,005
+Let's run this and go look at our current graph.
+
+87
+00:04:08,005 --> 00:04:12,002
+We can see that the graph is almost six cells wide.
+
+88
+00:04:12,002 --> 00:04:14,004
+Dividing 10, the graph's current width,
+
+89
+00:04:14,004 --> 00:04:17,000
+by six we get 1.6.
+
+90
+00:04:17,000 --> 00:04:19,008
+Now we want our graph to be a total of 12 cells wide
+
+91
+00:04:19,008 --> 00:04:22,004
+so we multiply these to get 20.
+
+92
+00:04:22,004 --> 00:04:24,008
+However, it was not exactly six cells
+
+93
+00:04:24,008 --> 00:04:26,007
+so we need to add a little bit.
+
+94
+00:04:26,007 --> 00:04:28,004
+Let's call it 20.3.
+
+95
+00:04:28,004 --> 00:04:30,002
+We can do the same process with the height
+
+96
+00:04:30,002 --> 00:04:37,009
+and we get 4.56.
+
+97
+00:04:37,009 --> 00:04:39,007
+Now we'll add a pie chart.
+
+98
+00:04:39,007 --> 00:04:42,003
+This pie chart will represent our totals columns.
+
+99
+00:04:42,003 --> 00:04:44,005
+Our labels were in O7 to P7
+
+100
+00:04:44,005 --> 00:04:46,008
+with our data in O8 to P8.
+
+101
+00:04:46,008 --> 00:04:48,002
+We have to take these from rows
+
+102
+00:04:48,002 --> 00:04:49,009
+just like in the previous bar chart
+
+103
+00:04:49,009 --> 00:05:05,008
+but the process is still the same.
+
+104
+00:05:05,008 --> 00:05:12,007
+Now let's add the data and set the categories.
+
+105
+00:05:12,007 --> 00:05:20,005
+And then create the title.
+
+106
+00:05:20,005 --> 00:05:23,001
+Finally, we need to set the width and the height.
+
+107
+00:05:23,001 --> 00:05:24,002
+Now because both charts
+
+108
+00:05:24,002 --> 00:05:26,003
+are between the same horizontal lines,
+
+109
+00:05:26,003 --> 00:05:30,004
+the height is the same.
+
+110
+00:05:30,004 --> 00:05:32,006
+Next, if we do the same math steps
+
+111
+00:05:32,006 --> 00:05:36,009
+we find that the width is 8.45.
+
+112
+00:05:36,009 --> 00:05:41,002
+Now, we'll add the chart to the worksheet.
+
+113
+00:05:41,002 --> 00:05:50,008
+Now, we can save this and run it one last time.
+
+114
+00:05:50,008 --> 00:05:51,009
+And there you have it.
+
+115
+00:05:51,009 --> 00:05:53,006
+We have a nicely formatted report
+
+116
+00:05:53,006 --> 00:05:56,003
+with graphs and data in our templates.
+

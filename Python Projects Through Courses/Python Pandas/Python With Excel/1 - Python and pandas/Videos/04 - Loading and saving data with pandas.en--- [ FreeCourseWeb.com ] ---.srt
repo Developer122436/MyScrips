@@ -1,0 +1,436 @@
+1
+00:00:00,002 --> 00:00:01,003
+- [Instructor] The first functions we're going
+
+2
+00:00:01,003 --> 00:00:03,009
+to go over in Pandas, are ways to get your data.
+
+3
+00:00:03,009 --> 00:00:06,004
+In Pandas, you can create a data frame from lists
+
+4
+00:00:06,004 --> 00:00:08,000
+or other objects in code.
+
+5
+00:00:08,000 --> 00:00:09,008
+Since we're using Python with Excel,
+
+6
+00:00:09,008 --> 00:00:12,003
+we're only going to look at how to create data frames
+
+7
+00:00:12,003 --> 00:00:14,008
+by reading files that already exist.
+
+8
+00:00:14,008 --> 00:00:16,009
+Now one tip I have before we get started,
+
+9
+00:00:16,009 --> 00:00:19,003
+is that I highly recommend following along
+
+10
+00:00:19,003 --> 00:00:22,000
+with the documentation that's provided by Pandas.
+
+11
+00:00:22,000 --> 00:00:24,006
+Many of the functions we'll be using have numerous flags
+
+12
+00:00:24,006 --> 00:00:27,005
+and multiple features to access that are outlined there,
+
+13
+00:00:27,005 --> 00:00:29,004
+and this tutorial will only use a few.
+
+14
+00:00:29,004 --> 00:00:31,000
+So the first thing we're going to do,
+
+15
+00:00:31,000 --> 00:00:34,003
+is head over to our text editor and import Pandas.
+
+16
+00:00:34,003 --> 00:00:38,002
+We do this by calling import Pandas as pd.
+
+17
+00:00:38,002 --> 00:00:41,009
+I'm also going to be importing a module of open pikes,
+
+18
+00:00:41,009 --> 00:00:44,002
+that I'll call the workbook, that will allow me to show you
+
+19
+00:00:44,002 --> 00:00:46,004
+saving to an Excel document.
+
+20
+00:00:46,004 --> 00:00:47,008
+Once we have these, we just need
+
+21
+00:00:47,008 --> 00:00:51,001
+to initialize our data frames, with the specified content.
+
+22
+00:00:51,001 --> 00:00:52,007
+The cool thing about Pandas is that
+
+23
+00:00:52,007 --> 00:00:54,008
+you can read multiple types of files.
+
+24
+00:00:54,008 --> 00:00:56,008
+This is handy because data can be structured
+
+25
+00:00:56,008 --> 00:00:59,001
+in any way and you'll still be able to interpret it.
+
+26
+00:00:59,001 --> 00:01:01,009
+So if we look at what we have in our working directory,
+
+27
+00:01:01,009 --> 00:01:04,002
+you'll notice that we have an Excel file,
+
+28
+00:01:04,002 --> 00:01:07,004
+a text file, and a CSV file.
+
+29
+00:01:07,004 --> 00:01:09,006
+Now all we have to do is create data frame variables
+
+30
+00:01:09,006 --> 00:01:12,005
+to specify for which kind of file we want.
+
+31
+00:01:12,005 --> 00:01:14,009
+So we'll have a data frame for our Excel file,
+
+32
+00:01:14,009 --> 00:01:17,004
+a data frame for our CSV file,
+
+33
+00:01:17,004 --> 00:01:19,006
+and a data frame for our text file.
+
+34
+00:01:19,006 --> 00:01:21,004
+Once we have those, all we have to do
+
+35
+00:01:21,004 --> 00:01:23,000
+is use the Pandas read function
+
+36
+00:01:23,000 --> 00:01:25,003
+to grab the data from the file.
+
+37
+00:01:25,003 --> 00:01:29,004
+So here, we'll have our Pandas.read Excel,
+
+38
+00:01:29,004 --> 00:01:31,008
+and at this point we're supposed to specify
+
+39
+00:01:31,008 --> 00:01:34,009
+the path variable, but because our files
+
+40
+00:01:34,009 --> 00:01:36,009
+are in our working directory, all we need is the name.
+
+41
+00:01:36,009 --> 00:01:44,007
+Now the same procedure follows for the other kinds of files.
+
+42
+00:01:44,007 --> 00:01:47,004
+And we'll specify for our CSV file,
+
+43
+00:01:47,004 --> 00:01:52,008
+and we'll specify the name, and for the text file,
+
+44
+00:01:52,008 --> 00:02:00,009
+we also use the read CSV function.
+
+45
+00:02:00,009 --> 00:02:03,002
+Now this is because there is essentially not too much
+
+46
+00:02:03,002 --> 00:02:05,008
+of a difference between a CSV file and a text file,
+
+47
+00:02:05,008 --> 00:02:08,006
+except for some little formatting differences.
+
+48
+00:02:08,006 --> 00:02:14,000
+So first, let's look at how Pandas formats our Excel file.
+
+49
+00:02:14,000 --> 00:02:19,008
+All we have to do is print this to console, and run it.
+
+50
+00:02:19,008 --> 00:02:22,003
+You'll notice that Pandas uses indices for rows
+
+51
+00:02:22,003 --> 00:02:24,000
+and headers for columns.
+
+52
+00:02:24,000 --> 00:02:26,006
+In our case, our indices are integers,
+
+53
+00:02:26,006 --> 00:02:27,007
+and our headers are strings,
+
+54
+00:02:27,007 --> 00:02:30,005
+such as region, unit, sales, and exports.
+
+55
+00:02:30,005 --> 00:02:32,009
+We'll be able to change this later,
+
+56
+00:02:32,009 --> 00:02:34,007
+but let's move onto the next one.
+
+57
+00:02:34,007 --> 00:02:41,007
+Now we'll print out our text file.
+
+58
+00:02:41,007 --> 00:02:42,009
+Now you'll notice here that Pandas
+
+59
+00:02:42,009 --> 00:02:45,002
+has a pretty handy feature where it'll abbreviate
+
+60
+00:02:45,002 --> 00:02:48,009
+all of your data, so it takes lines 0 to 4,
+
+61
+00:02:48,009 --> 00:02:53,004
+all the way down to 11,765, and that's pretty convenient,
+
+62
+00:02:53,004 --> 00:02:55,003
+but you'll also notice that the data
+
+63
+00:02:55,003 --> 00:02:57,005
+is formatted differently.
+
+64
+00:02:57,005 --> 00:02:58,004
+The indices are still present,
+
+65
+00:02:58,004 --> 00:03:00,009
+but the data's acting as a singular column.
+
+66
+00:03:00,009 --> 00:03:03,005
+This is because our word document is formatted in a way
+
+67
+00:03:03,005 --> 00:03:05,008
+that tabs separate each column.
+
+68
+00:03:05,008 --> 00:03:08,004
+Because of this, all we have to do is add a delimiter
+
+69
+00:03:08,004 --> 00:03:14,007
+to specify that we're looking to separate by tabs.
+
+70
+00:03:14,007 --> 00:03:16,006
+Now if we run this again, we should get
+
+71
+00:03:16,006 --> 00:03:19,001
+a nice formatted output,
+
+72
+00:03:19,001 --> 00:03:21,001
+and here we have our text file formatted
+
+73
+00:03:21,001 --> 00:03:24,002
+into three separate columns like it's supposed to be.
+
+74
+00:03:24,002 --> 00:03:32,001
+Now moving onto the CSV file.
+
+75
+00:03:32,001 --> 00:03:33,008
+Let's run that through terminal.
+
+76
+00:03:33,008 --> 00:03:36,000
+We can see that the indices are still intact,
+
+77
+00:03:36,000 --> 00:03:38,002
+but the first row of data is acting as a header
+
+78
+00:03:38,002 --> 00:03:39,008
+for the rest of the file.
+
+79
+00:03:39,008 --> 00:03:42,002
+In order to prevent this, we need to specify
+
+80
+00:03:42,002 --> 00:03:45,004
+that there is no header present in the CSV file.
+
+81
+00:03:45,004 --> 00:03:50,005
+So all we have to do is add a header flag, and specify none.
+
+82
+00:03:50,005 --> 00:03:54,007
+When we run this again, we can see that now the headers
+
+83
+00:03:54,007 --> 00:03:56,006
+are just integers.
+
+84
+00:03:56,006 --> 00:03:58,000
+So let's change this to something that's
+
+85
+00:03:58,000 --> 00:03:59,007
+a little bit more workable.
+
+86
+00:03:59,007 --> 00:04:02,002
+All we have to do is use the columns function.
+
+87
+00:04:02,002 --> 00:04:07,002
+So we have our df to CSV columns
+
+88
+00:04:07,002 --> 00:04:08,008
+and we set it equal to a list.
+
+89
+00:04:08,008 --> 00:04:11,003
+Now what do we want our columns to be?
+
+90
+00:04:11,003 --> 00:04:15,000
+So first here we have John Doe, and then an address,
+
+91
+00:04:15,000 --> 00:04:17,007
+a city, a state, and an area code.
+
+92
+00:04:17,007 --> 00:04:22,004
+So we'll just use those for our headers.
+
+93
+00:04:22,004 --> 00:04:25,006
+The first name, last name, address,
+
+94
+00:04:25,006 --> 00:04:28,008
+city, state, and area code.
+
+95
+00:04:28,008 --> 00:04:31,000
+So once we have that workable, we'll go ahead
+
+96
+00:04:31,000 --> 00:04:33,000
+and save this to our Excel file,
+
+97
+00:04:33,000 --> 00:04:34,006
+so we'll get rid of our print statement,
+
+98
+00:04:34,006 --> 00:04:38,009
+and we'll use our save function.
+
+99
+00:04:38,009 --> 00:04:41,002
+And then we get to choose a name for it and remember,
+
+100
+00:04:41,002 --> 00:04:43,006
+you always have to keep on your file extensions.
+
+101
+00:04:43,006 --> 00:04:46,004
+For our Excel, it's an xlsx file,
+
+102
+00:04:46,004 --> 00:04:51,002
+and we'll just call it modified.
+
+103
+00:04:51,002 --> 00:04:52,006
+If we run this, our file should appear
+
+104
+00:04:52,006 --> 00:04:54,009
+in our working directory.
+
+105
+00:04:54,009 --> 00:04:57,003
+Let's open this up and see that its formatted nicely
+
+106
+00:04:57,003 --> 00:05:01,007
+with our indices, our headers, and all of our data.
+
+107
+00:05:01,007 --> 00:05:02,009
+So there you have it.
+
+108
+00:05:02,009 --> 00:05:05,004
+As you can see Pandas is extremely useful
+
+109
+00:05:05,004 --> 00:05:07,007
+in working with data from different file types.
+

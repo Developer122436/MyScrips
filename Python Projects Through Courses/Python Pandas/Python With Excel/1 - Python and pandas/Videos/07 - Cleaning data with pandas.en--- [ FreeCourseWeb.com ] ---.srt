@@ -1,0 +1,432 @@
+1
+00:00:00,000 --> 00:00:02,004
+- [Instructor] A common problem for data scientists,
+
+2
+00:00:02,004 --> 00:00:05,008
+called the 80 20 problem, states that 80% of their time
+
+3
+00:00:05,008 --> 00:00:09,002
+is spent reading, cleaning, and reorganizing data.
+
+4
+00:00:09,002 --> 00:00:12,004
+Like in most samples of data, the larger the sample gets,
+
+5
+00:00:12,004 --> 00:00:14,003
+the more irregularities occur.
+
+6
+00:00:14,003 --> 00:00:17,002
+In this video, I'll be covering a few simple techniques
+
+7
+00:00:17,002 --> 00:00:19,006
+for organizing and cleaning our data.
+
+8
+00:00:19,006 --> 00:00:23,009
+So lets get started and import pandas.
+
+9
+00:00:23,009 --> 00:00:26,004
+We will also import numpy, or num pi.
+
+10
+00:00:26,004 --> 00:00:27,008
+This is included with pandas
+
+11
+00:00:27,008 --> 00:00:29,007
+and provides many different features.
+
+12
+00:00:29,007 --> 00:00:31,005
+But for now, we only need it to deal
+
+13
+00:00:31,005 --> 00:00:35,002
+with a nan or not a member values.
+
+14
+00:00:35,002 --> 00:00:37,000
+We'll also take the workbook module
+
+15
+00:00:37,000 --> 00:00:42,008
+from open py excel, so that we can save to our excel sheet.
+
+16
+00:00:42,008 --> 00:00:44,006
+So let's go ahead and set up the data frame
+
+17
+00:00:44,006 --> 00:00:47,001
+we've been using, I already have it prepared
+
+18
+00:00:47,001 --> 00:00:49,002
+and I'll paste it here.
+
+19
+00:00:49,002 --> 00:00:50,008
+The first step in cleaning our data
+
+20
+00:00:50,008 --> 00:00:53,000
+is getting rid of unnecessary columns.
+
+21
+00:00:53,000 --> 00:00:55,001
+In our case, we created these columns,
+
+22
+00:00:55,001 --> 00:00:57,000
+but imagine if we had numerous columns
+
+23
+00:00:57,000 --> 00:00:59,002
+and some didn't apply to anything we needed.
+
+24
+00:00:59,002 --> 00:01:00,008
+We can simply drop them.
+
+25
+00:01:00,008 --> 00:01:03,006
+First, we can create a variable called two drop.
+
+26
+00:01:03,006 --> 00:01:06,004
+But because we're only going to be dropping the addresses,
+
+27
+00:01:06,004 --> 00:01:11,005
+we can go straight to the drop function.
+
+28
+00:01:11,005 --> 00:01:13,006
+We can also pass on a list if we wanted
+
+29
+00:01:13,006 --> 00:01:15,001
+to drop more than one column,
+
+30
+00:01:15,001 --> 00:01:17,006
+but for now, we'll just drop addresses.
+
+31
+00:01:17,006 --> 00:01:19,002
+Notice that the drop function,
+
+32
+00:01:19,002 --> 00:01:22,002
+like most functions in pandas, has many flags.
+
+33
+00:01:22,002 --> 00:01:24,001
+The in place flag only confirms
+
+34
+00:01:24,001 --> 00:01:26,001
+that we are applying the changes to the data frame's
+
+35
+00:01:26,001 --> 00:01:27,008
+current instance just so we don't
+
+36
+00:01:27,008 --> 00:01:29,007
+have to write it equal to itself.
+
+37
+00:01:29,007 --> 00:01:31,007
+As you follow along in the documentation,
+
+38
+00:01:31,007 --> 00:01:34,004
+you should study up on what these flags can do for you.
+
+39
+00:01:34,004 --> 00:01:36,007
+Now, we drop the addresses, but we still want
+
+40
+00:01:36,007 --> 00:01:39,008
+to be able to identify where people live, specifically.
+
+41
+00:01:39,008 --> 00:01:43,000
+In this case, we should make our indexing by area codes.
+
+42
+00:01:43,000 --> 00:01:44,007
+Some people have the same area code
+
+43
+00:01:44,007 --> 00:01:46,004
+but in our case, they're unique.
+
+44
+00:01:46,004 --> 00:01:48,004
+It is more useful to use an identifier
+
+45
+00:01:48,004 --> 00:01:50,002
+that is unique for each object.
+
+46
+00:01:50,002 --> 00:01:53,004
+Imagine you had hundreds of thousands of library books,
+
+47
+00:01:53,004 --> 00:01:55,007
+each having their own identification number.
+
+48
+00:01:55,007 --> 00:01:57,003
+You could then search them and index
+
+49
+00:01:57,003 --> 00:01:59,005
+your data just by these IDs.
+
+50
+00:01:59,005 --> 00:02:05,007
+So let's set up our indexes for our area code.
+
+51
+00:02:05,007 --> 00:02:08,000
+Know that if we use the in place function
+
+52
+00:02:08,000 --> 00:02:10,000
+in our set index function, we wouldn't
+
+53
+00:02:10,000 --> 00:02:12,004
+have to set the data frame equal to itself.
+
+54
+00:02:12,004 --> 00:02:14,001
+So let's continue on and print
+
+55
+00:02:14,001 --> 00:02:19,006
+the location of our area codes.
+
+56
+00:02:19,006 --> 00:02:23,001
+This will return the row with the area code of 8074.
+
+57
+00:02:23,001 --> 00:02:27,005
+So let's run this.
+
+58
+00:02:27,005 --> 00:02:31,001
+As we expected, we get John Doe from Riverside, New Jersey.
+
+59
+00:02:31,001 --> 00:02:33,009
+However, we can still index rows with the indexes,
+
+60
+00:02:33,009 --> 00:02:40,002
+like an array with the I location function.
+
+61
+00:02:40,002 --> 00:02:42,001
+And we get the same exact row.
+
+62
+00:02:42,001 --> 00:02:44,006
+So, using an area code in a format like this
+
+63
+00:02:44,006 --> 00:02:46,009
+allows us to use these unique identifiers
+
+64
+00:02:46,009 --> 00:02:48,005
+to find people if we wanted to.
+
+65
+00:02:48,005 --> 00:02:50,003
+Now, for more cleaning purposes,
+
+66
+00:02:50,003 --> 00:02:56,008
+let's take a look at everyone's first name.
+
+67
+00:02:56,008 --> 00:02:58,005
+This is using a slice method.
+
+68
+00:02:58,005 --> 00:03:01,003
+Because there is no number on the right side of the colon,
+
+69
+00:03:01,003 --> 00:03:04,004
+it is taking the location of index 8074
+
+70
+00:03:04,004 --> 00:03:05,007
+to the end of the row.
+
+71
+00:03:05,007 --> 00:03:11,007
+Now, let's clear our terminal and run this.
+
+72
+00:03:11,007 --> 00:03:14,002
+Looking to the data, we see that some of the names
+
+73
+00:03:14,002 --> 00:03:16,000
+contain nicknames and quotes.
+
+74
+00:03:16,000 --> 00:03:18,000
+If you remember, when we searched for all Johns
+
+75
+00:03:18,000 --> 00:03:20,008
+who lived in Riverside, we only got one of the two.
+
+76
+00:03:20,008 --> 00:03:24,000
+So, we need to somehow read everyone's first name
+
+77
+00:03:24,000 --> 00:03:27,000
+and use a string function to split it by spaces.
+
+78
+00:03:27,000 --> 00:03:28,008
+In order to do this, we need to access
+
+79
+00:03:28,008 --> 00:03:31,003
+the first name column, call each object
+
+80
+00:03:31,003 --> 00:03:38,007
+to it's string value, and split it.
+
+81
+00:03:38,007 --> 00:03:43,003
+Let's run this and see what we get.
+
+82
+00:03:43,003 --> 00:03:45,000
+We can see that it splits every word
+
+83
+00:03:45,000 --> 00:03:47,007
+in the first column into it's own column.
+
+84
+00:03:47,007 --> 00:03:49,006
+Now all we have to do is somehow grab
+
+85
+00:03:49,006 --> 00:03:51,002
+the first column of the split.
+
+86
+00:03:51,002 --> 00:04:00,000
+However, pandas handles this for us pretty efficiently.
+
+87
+00:04:00,000 --> 00:04:05,006
+Now let's print this and see what we get.
+
+88
+00:04:05,006 --> 00:04:07,005
+We can see that the data frame only uses
+
+89
+00:04:07,005 --> 00:04:10,003
+the first column of the split as the first name.
+
+90
+00:04:10,003 --> 00:04:11,005
+Pretty easy, right?
+
+91
+00:04:11,005 --> 00:04:13,002
+The last thing we have to deal with
+
+92
+00:04:13,002 --> 00:04:15,002
+is the in addressable nan value.
+
+93
+00:04:15,002 --> 00:04:18,001
+All we have to do is locate the nan value of numpy
+
+94
+00:04:18,001 --> 00:04:21,002
+and replace it with a string that we can easily identify.
+
+95
+00:04:21,002 --> 00:04:24,002
+So, let's use the data frames replace function,
+
+96
+00:04:24,002 --> 00:04:25,009
+search for numpy's nan value,
+
+97
+00:04:25,009 --> 00:04:33,000
+and replace it with our own string.
+
+98
+00:04:33,000 --> 00:04:36,008
+Now, this should replace all nan values with the string, NA.
+
+99
+00:04:36,008 --> 00:04:38,007
+Lastly, let's save this to an excel
+
+100
+00:04:38,007 --> 00:04:43,004
+and check out our clean data.
+
+101
+00:04:43,004 --> 00:04:50,009
+Let's clear our terminal and run this.
+
+102
+00:04:50,009 --> 00:04:54,005
+Now we can head over to our working directory
+
+103
+00:04:54,005 --> 00:04:57,002
+and open up our new modified document.
+
+104
+00:04:57,002 --> 00:05:00,000
+As you can see, everyone has a single first name,
+
+105
+00:05:00,000 --> 00:05:02,000
+is indexed by their area code,
+
+106
+00:05:02,000 --> 00:05:05,003
+and all of the nan values are replaced by our NA strings.
+
+107
+00:05:05,003 --> 00:05:06,002
+And there you have it.
+
+108
+00:05:06,002 --> 00:05:09,001
+Our data set is now clean and easily addressable.
+

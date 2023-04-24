@@ -1,0 +1,116 @@
+1
+00:00:00,003 --> 00:00:01,006
+- [Instructor] When working with Excel,
+
+2
+00:00:01,006 --> 00:00:02,009
+there are many tools available
+
+3
+00:00:02,009 --> 00:00:04,009
+that allow interaction with Python.
+
+4
+00:00:04,009 --> 00:00:07,002
+One of the most popular tools is Pandas.
+
+5
+00:00:07,002 --> 00:00:08,003
+The Pandas library,
+
+6
+00:00:08,003 --> 00:00:10,005
+which is used primarily for data science,
+
+7
+00:00:10,005 --> 00:00:13,000
+makes it super easy for us to examine, sort,
+
+8
+00:00:13,000 --> 00:00:16,001
+or modify any data, even from Excel.
+
+9
+00:00:16,001 --> 00:00:17,005
+But how does it do that?
+
+10
+00:00:17,005 --> 00:00:19,007
+Pandas essentially creates a spreadsheet for us
+
+11
+00:00:19,007 --> 00:00:22,000
+in our Python code called the dataframe.
+
+12
+00:00:22,000 --> 00:00:24,008
+This dataframe has indexed rows and header columns
+
+13
+00:00:24,008 --> 00:00:27,000
+that both store what's called a series.
+
+14
+00:00:27,000 --> 00:00:30,000
+The series stores all the values in the rows and columns,
+
+15
+00:00:30,000 --> 00:00:31,005
+almost like the list.
+
+16
+00:00:31,005 --> 00:00:33,007
+Because both these objects are iterable,
+
+17
+00:00:33,007 --> 00:00:37,000
+Pandas makes it easy to traverse and pick up the data.
+
+18
+00:00:37,000 --> 00:00:38,002
+Using the dataframe,
+
+19
+00:00:38,002 --> 00:00:41,002
+we can do any kind of analysis or grouping we'd want
+
+20
+00:00:41,002 --> 00:00:42,009
+and export it to an Excel.
+
+21
+00:00:42,009 --> 00:00:45,001
+Before we jump in, let's get Panda set up
+
+22
+00:00:45,001 --> 00:00:47,008
+via the Pip installer in our command prompt.
+
+23
+00:00:47,008 --> 00:00:49,003
+For my system specifically,
+
+24
+00:00:49,003 --> 00:00:54,005
+I need to run pi dash M, pip install pandas.
+
+25
+00:00:54,005 --> 00:00:57,000
+As you can see, I already have it.
+
+26
+00:00:57,000 --> 00:01:00,002
+Now, let's open up Python in our terminal.
+
+27
+00:01:00,002 --> 00:01:02,007
+If we import Pandas and press Enter,
+
+28
+00:01:02,007 --> 00:01:05,004
+we see no errors and that means Pandas
+
+29
+00:01:05,004 --> 00:01:06,006
+was installed correctly.
+

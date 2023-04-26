@@ -2,9 +2,13 @@ from datetime import datetime
 import random
 import pandas as pd
 import smtplib
+import os
+from dotenv import load_dotenv
 
-MY_EMAIL = "dimaspektor1224@outlook.com"
-MY_PASSWORD = "sefgpoqvuuqtxsfa"
+load_dotenv()
+
+MY_EMAIL = os.getenv("MY_EMAIL")
+MY_PASSWORD = os.getenv("MY_PASSWORD")
 
 today = (datetime.now().month, datetime.now().day)
 
@@ -15,9 +19,9 @@ if today in birthdays_dict:
     file_path = f"letter_templates/letter_{random.randint(1,3)}.txt"
     with open(file_path) as letter_file:
         contents = letter_file.read()
-        contents.replace("[NAME]", birthday_person['name'])
+        contents = contents.replace("[NAME]", birthday_person['name'])
 
-    with smtplib.SMTP("smtp-mail.outlook.com") as connection:
+    with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
         connection.login(MY_EMAIL, MY_PASSWORD)
         connection.sendmail(from_addr=MY_EMAIL,

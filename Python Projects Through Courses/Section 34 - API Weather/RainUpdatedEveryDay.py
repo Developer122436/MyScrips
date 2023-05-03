@@ -1,14 +1,17 @@
 import requests
+import os
 from twilio.rest import Client
+from dotenv import load_dotenv
 
-account_sid = "AC237bc0db2e93f30459b8939b5d955d3a"
-auth_token = "b612ac166e3987862d7e6df9e84513b2"
+load_dotenv()
 
+account_sid = os.getenv("ACCOUNT_SID")
+auth_token = os.getenv("AUTH_TOKEN")
 
 parameters = {
     "lat": -36.848461,
     "lon": 174.763336,
-    "appid": "262ca3e8ba5bf146949d1a9f2e8b6d1b",
+    "appid": os.getenv("APP_ID_API_WEATHER"),
     "exclude": "current, minutely, daily"
 }
 

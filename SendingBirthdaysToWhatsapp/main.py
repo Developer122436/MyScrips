@@ -1,4 +1,3 @@
-import requests
 import os
 from twilio.rest import Client
 from dotenv import load_dotenv
@@ -10,6 +9,7 @@ load_dotenv()
 
 account_sid = os.getenv("ACCOUNT_SID")
 auth_token = os.getenv("AUTH_TOKEN")
+twilio_phone = os.getenv("TWILIO_PHONE")
 
 today = (datetime.now().month, datetime.now().day)
 
@@ -28,7 +28,7 @@ if today in birthdays_dict:
     client = Client(account_sid, auth_token)
 
     message = client.messages.create(
-        from_='whatsapp:+14155238886',
+        from_=f'whatsapp:{twilio_phone}',
         body=contents,
         to=f"whatsapp:+972{birthday_person['phone']}"
     )

@@ -7,6 +7,8 @@ load_dotenv()
 
 account_sid = os.getenv("ACCOUNT_SID")
 auth_token = os.getenv("AUTH_TOKEN")
+twilio_phone = os.getenv("TWILIO_PHONE")
+my_phone = os.getenv("MY_PHONE")
 
 # "lat": -36.848461,
 # "lon": 174.763336,
@@ -33,7 +35,7 @@ for hour_data in weather_slice:
 if will_rain:
     client = Client(account_sid, auth_token)
     message = client.messages.create(
-        from_='whatsapp:+14155238886',
+        from_=f'whatsapp:{twilio_phone}',
         body="הולך לרדת גשם. לא לשכוח להביא מטריה ☂️",
-        to='whatsapp:+972507999325'
+        to=f'whatsapp:{my_phone}'
     )

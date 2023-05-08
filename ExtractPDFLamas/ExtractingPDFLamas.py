@@ -37,7 +37,7 @@ for table in tables:
 
     df_to_csv = pd.concat([df_to_csv, df.iloc[1:, :]])
 
-df_to_csv['שם יישוב'] = df_to_csv['שם יישוב'].replace({'-טלאל': 'טל-אל', 'נהרייה': 'נהריה'})
+df_to_csv['שם יישוב'] = df_to_csv['שם יישוב'].replace({'-טלאל': 'טל-אל', 'נהרייה': 'נהריה', 'דייר אל-אסד': 'דיר אל-אסד'})
 
 if not os.path.exists(sys.argv[2]):
     print("Invalid path!")

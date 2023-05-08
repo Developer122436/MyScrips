@@ -8,9 +8,12 @@ load_dotenv()
 account_sid = os.getenv("ACCOUNT_SID")
 auth_token = os.getenv("AUTH_TOKEN")
 
+# "lat": -36.848461,
+# "lon": 174.763336,
+
 parameters = {
-    "lat": -36.848461,
-    "lon": 174.763336,
+    "lat": 32.011261,
+    "lon": 34.774811,
     "appid": os.getenv("APP_ID_API_WEATHER"),
     "exclude": "current, minutely, daily"
 }
@@ -34,4 +37,3 @@ if will_rain:
         body="הולך לרדת גשם. לא לשכוח להביא מטריה ☂️",
         to='whatsapp:+972507999325'
     )
-    print(message.status)

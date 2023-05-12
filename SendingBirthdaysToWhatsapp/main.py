@@ -30,6 +30,6 @@ if today in birthdays_dict:
     message = client.messages.create(
         from_=f'whatsapp:{twilio_phone}',
         body=contents,
-        to=f"whatsapp:+972{birthday_person['phone']}"
+        to=f'whatsapp:+972{birthday_person["phone"]}'
     )
     print(message.status)

@@ -1,9 +1,9 @@
 # MyScrips
-I created all my projects with Python by myself and part of my work in courses.
+I created all my projects with Python by myself and part of my work in course.
 
 I used a lot of automatic tasks and graphs on multiple libraries to make an analysis automatically.
 
-I have a script on the codes that restart my computer, convert PDF to CSV on my project, send happy birthday at 12 AM to the WhatsApp list of my friends in Excel file,
+I developed a scripts in Python that restart my computer, convert PDF to CSV on my project, send happy birthday at 12 AM to the WhatsApp list of my friends in Excel file,
 
 check the API of the weather site and send me a notification if had rain to my WhatsApp every 6 AM, 
 

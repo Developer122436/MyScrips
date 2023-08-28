@@ -1,2 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+...
+
+# PyCharm IDE
+.idea
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# custom
+main.py
+token.txt
 .env
+
 birthdays.csv

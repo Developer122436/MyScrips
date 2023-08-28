@@ -1,1 +1,13 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+...
+
+# PyCharm IDE
+.idea
+
+# custom
+main.py
+token.txt
 .env

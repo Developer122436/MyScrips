@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
 from pprint import pprint
+from dotenv import load_dotenv
+import os
 
 
 def fetch_billboard_page(url, headers):
@@ -71,12 +73,15 @@ def create_billboard_playlist(sp, desired_date, uris):
 if __name__ == "__main__":
     desired_date = input("Enter the date you would like to travel to in YYYY-MM-DD format: ")
     song_names = get_billboard_top_100(desired_date)
+
+    load_dotenv()
+
     if song_names:
-        client_id = 'f942e82a6a7440ef88d0cd2b995e7fe2'
-        client_secret = '496542177659411ea5ac550f4a06fc40'
+        client_id = os.getenv('CLIENT_ID')
+        client_secret = os.getenv('CLIENT_SECRET')
         redirect_uri = 'http://example.com'
         scope = 'playlist-modify-private'
-        username = 'dor12'
+        username = os.getenv('USER_ID')
 
         sp = authenticate_spotify(client_id, client_secret, redirect_uri, scope, username)
         uris = get_spotify_uris(song_names, sp)

@@ -29,10 +29,10 @@ A Flask-based RESTful API that allows users to explore, add, and manage cafes wi
 ## Setup
 
 1. Clone the repository:  
-   `git clone <repository_url>`
+   `git clone https://github.com/Developer122436/MyScrips.git`
 
 2. Navigate to the project directory:  
-   `cd cafe-wifi-api`
+   `cd My Projects on Data Science, Web and more/Section 66 - Advanced Build RESTful API`
 
 3. Install the required packages:  
    `pip install -r requirements.txt`

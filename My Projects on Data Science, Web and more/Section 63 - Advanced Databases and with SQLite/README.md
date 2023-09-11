@@ -16,7 +16,7 @@ A comprehensive exploration of advanced database concepts using SQLite. This pro
 
 ## Setup
 
-1. Clone the repository (This is a placeholder as I don't have the exact repo link):  
+1. Clone the repository:  
    `git clone https://github.com/Developer122436/MyScrips.git`
 
 2. Navigate to the project directory:  

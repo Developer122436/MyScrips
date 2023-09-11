@@ -32,7 +32,8 @@ A Flask-based RESTful API that allows users to explore, add, and manage cafes wi
    `git clone https://github.com/Developer122436/MyScrips.git`
 
 2. Navigate to the project directory:  
-   `cd My Projects on Data Science, Web and more/Section 66 - Advanced Build RESTful API`
+   `cd "My Projects on Data Science, Web and more/Section 66 - Advanced Build RESTful API"
+`
 
 3. Install the required packages:  
    `pip install -r requirements.txt`

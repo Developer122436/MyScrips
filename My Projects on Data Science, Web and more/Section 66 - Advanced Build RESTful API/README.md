@@ -2,6 +2,14 @@
 
 A Flask-based RESTful API that allows users to explore, add, and manage cafes with details like location, amenities, and coffee prices.
 
+## Technologies Used
+
+- **Flask:** A lightweight WSGI web application framework for building web applications.
+- **Flask-SQLAlchemy:** An extension for Flask that simplifies the use of SQLAlchemy in your Flask application.
+- **SQLite:** A C-language library that provides a lightweight, serverless, self-contained SQL database engine.
+- **Postman:** A popular API client used for testing web services.
+
+
 ## Features
 
 - **Retrieve All Cafes:** List all cafes available in the database.

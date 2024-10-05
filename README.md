@@ -1,6 +1,6 @@
 # MyScrips
 
-Link to Jupyter Notebooks:
+Link to Jupyter Notebooks in Google Colab:
 https://drive.google.com/drive/folders/1LXmrmW0UPoQ9Y_oyvzWm3IpJ1tyaHNml?usp=sharing
 
 I created all my projects with Python and part of my work in the course.
